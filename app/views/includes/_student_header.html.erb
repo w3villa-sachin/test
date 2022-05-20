@@ -1,0 +1,48 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+  <a class="navbar-brand" href="#">AcademiaSystems</a>
+  <ul>
+  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa-solid fa-circle-user"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a><%= link_to "Update Profile", edit_user_registration_path, class:'dropdown-item' %> </a>
+          <a><%= link_to "Sign out", destroy_user_session_path, :method => :delete, data: {confirm: "Are your sure ?"}, class:'dropdown-item' %>
+</a>
+        </div>
+      </li>
+      </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+</nav>
+    
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li><div class="user-view">
+      <div class="background">
+        <%= image_tag("office.jpg", :alt => "User") %>
+      </div>
+      <a href="#user"><%= image_tag("avator.jpg", :alt => "Image", :class=>'circle') %></a>
+      <a href="#name"><span class="white-text name">Sachin Srivastava</span></a>
+      <a href="#email"><span class="white-text email"><%= current_user.email %></span></a>
+    </div></li>
+    <li><div class="divider"></div></li>
+    <li><div class="divider"></div></li>
+    <li><a href="/students/dashboard"><i class="fa-solid fa-house-user"></i>Dashboard</a></li>
+    <li><a href="/students/dashboard"><i class="fa-solid fa-car"></i>Time</a></li>
+
+  </ul>
+  
+        
+
+
+  <script>
+
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+  });
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
+  
+  </script>

@@ -1,0 +1,32 @@
+<div class="row g-0">
+<div class="col col-lg-7 col-md-7 col-sm-12 g-0 p-0">
+  <%= image_tag("index-img.jpg", :alt => "logo", :class => "login-img") %>
+
+</div>
+<div class="col col-lg-5 col-md-5 col-sm-12 m-auto card">
+
+<div class="m-auto text-center" style="width: 18rem;">
+    <h5 class="card-title font-weight-bold">Forgot your password?</h5>
+<div class="card-body">
+  
+    <p class="alert"><%= alert %></p>
+
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</div>
